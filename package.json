@@ -1,0 +1,14 @@
+{
+  "name": "reading-focus",
+  "version": "1.0.0",
+  "description": "Speed reading tool as a browser extension.",
+  "scripts": {
+    "build:sass": "sass scss:css",
+    "watch:sass": "sass --watch scss:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}

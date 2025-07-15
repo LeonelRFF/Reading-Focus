@@ -1,0 +1,39 @@
+// Styles specific to the main reading application (index.html)
+
+.main-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.content-panel {
+    margin-top: 1.5rem;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drop-zone {
+    background-color: var(--panel-bg-color);
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--secondary-text-color);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    cursor: pointer;
+
+    &:hover { border-color: var(--primary-color); }
+
+    &.is-dragover {
+        border-color: var(--primary-color);
+        background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+        transform: scale(1.02);
+    }
+    p { pointer-events: none; }
+}

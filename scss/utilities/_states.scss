@@ -1,0 +1,33 @@
+body.is-reading-now {
+    cursor: none;
+
+    .floating-btn-container,
+    #paragraph-view-btn,
+    .progress-container,
+    .stats-container,
+    .content-panel {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &.hold-mode .play-btn { opacity: 0; }
+
+    &.toggle-mode .play-btn {
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}
+
+// Special states for reader view
+.reader-view {
+    &.is-paragraph-view {
+        align-items: flex-start;
+        cursor: default;
+
+        .word-display { display: none; }
+        .paragraph-display { display: block; }
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Focus</title> <!-- Título estático está bien aquí -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <audio id="word-tick-sound" src="assets/audio/tick.mp3" preload="auto"></audio>
+    <div id="config-btn-container" class="floating-btn-container"><button id="config-btn" class="floating-btn" title="Configuración (Ctrl + ,)" data-i18n-title="configBtnTitle">⚙️</button></div>
+    <div id="fullscreen-btn-container" class="floating-btn-container"><button id="fullscreen-btn" class="floating-btn" title="Pantalla Completa (f)" data-i18n-title="fullscreenBtnTitle">↗️</button></div>
+    
+    <div id="config-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header"><h2 data-i18n="configTitle">Configuración</h2><button id="config-modal-close-btn" class="modal-close-btn">×</button></div>
+            <div class="control-group"><label data-i18n="themeStyleLabel">Tema:</label><div class="radio-group"><label><input type="radio" name="theme-style" value="system"><span data-i18n="themeSystem">Sistema</span></label><label><input type="radio" name="theme-style" value="light"><span data-i18n="themeLight">Claro</span></label><label><input type="radio" name="theme-style" value="dark"><span data-i18n="themeDark">Oscuro</span></label></div></div>
+            <div class="control-group"><label for="wpm-slider"><span data-i18n="wpmLabel">Velocidad (PPM):</span> <span id="wpm-value">300</span></label><input type="range" id="wpm-slider" min="50" max="1500" step="10" value="300"></div>
+            <div class="control-group"><label for="font-size-slider"><span data-i18n="fontSizeLabel">Tamaño de Letra:</span> <span id="font-size-value">48</span>px</label><input type="range" id="font-size-slider" min="16" max="96" step="1" value="48"></div>
+            <div class="control-group"><label for="font-family-select" data-i18n="fontFamilyLabel">Tipografía:</label><select id="font-family-select"><option value="'Roboto', sans-serif">Roboto</option><option value="'Open Sans', sans-serif">Open Sans</option><option value="'Lato', sans-serif">Lato</option><option value="'Merriweather', serif">Merriweather</option><option value="'Inconsolata', monospace">Inconsolata</option></select></div>
+            <div class="control-group"><label for="context-words-slider"><span data-i18n="contextWordsLabel">Palabras de Contexto:</span> <span id="context-words-value">2</span></label><input type="range" id="context-words-slider" min="0" max="5" step="1" value="2"></div>
+            <div class="control-group"><label data-i18n="highlightStyleLabel">Estilo de Resaltado:</label><div class="radio-group"><label><input type="radio" name="highlight-style" value="word"><span data-i18n="highlightWord">Palabra completa</span></label><label><input type="radio" name="highlight-style" value="letter"><span data-i18n="highlightLetter">Letra central</span></label><label><input type="radio" name="highlight-style" value="none"><span data-i18n="highlightNone">Ninguno</span></label></div></div>
+            <div class="control-group"><label class="checkbox-label"><input type="checkbox" id="hold-to-read-checkbox"><span data-i18n="holdToReadLabel">Mantener presionado</span></label></div>
+            <div class="control-group"><label class="checkbox-label"><input type="checkbox" id="sound-enabled-checkbox"><span data-i18n="soundEnabledLabel">Habilitar sonido</span></label></div>
+            <div class="control-group"><label class="checkbox-label"><input type="checkbox" id="oled-mode-checkbox"><span data-i18n="oledModeLabel">Pantalla OLED (Negro Puro)</span></label></div>
+        </div>
+    </div>
+    
+    <div id="import-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header"><h2 data-i18n="importTitle">Importar Contenido</h2><button id="import-modal-close-btn" class="modal-close-btn">×</button></div>
+            <button id="import-file-btn-modal" class="secondary-btn" data-i18n="importFileBtn">Haga clic para seleccionar archivo (Ctrl + i)</button>
+            <textarea id="text-input" placeholder="O pegue su texto aquí..." data-i18n-placeholder="importPlaceholder"></textarea>
+            <input type="file" id="file-input" hidden accept=".txt,.md">
+        </div>
+    </div>
+    
+    <main class="app-container">
+        <div class="reader-view" aria-live="polite">
+            <button id="paragraph-view-btn" title="Vista de Párrafo (t)" data-i18n-title="paragraphViewBtnTitle">🔍</button>
+            <div id="word-display" class="word-display"><span id="context-before"></span><span id="word-focus"></span><span id="context-after"></span></div>
+            <div id="paragraph-display" class="paragraph-display"></div>
+        </div>
+        <div class="stats-container">
+            <!-- El contenido de la barra de progreso se actualiza dinámicamente -->
+            <div class="progress-container"><div id="progress-bar" class="progress-bar"></div></div>
+            <div id="word-counter">0 / 0</div>
+            <div id="percentage-counter">0%</div>
+        </div>
+        <div class="main-controls"><button id="play-pause-btn" class="play-btn">⚡️</button></div>
+        <div class="content-panel">
+            <div id="main-drop-zone" class="drop-zone"><p data-i18n="dropZoneText">Arrastra un archivo, haz clic aquí o presiona (i)</p></div>
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

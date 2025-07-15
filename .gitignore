@@ -1,0 +1,5 @@
+# Compiled CSS output
+css/
+
+# Node.js dependencies
+node_modules/

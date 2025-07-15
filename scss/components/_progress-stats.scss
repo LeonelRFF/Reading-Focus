@@ -1,0 +1,39 @@
+.progress-container {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1rem;
+    touch-action: none;
+    transition: opacity 0.3s ease;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.1s ease-out;
+    pointer-events: none;
+}
+
+.stats-container {
+    text-align: center;
+    margin-top: 0.75rem;
+    color: var(--secondary-text-color);
+    transition: opacity 0.3s ease;
+}
+#word-counter {
+    font-size: 1rem;
+    font-weight: 500;
+}
+#percentage-counter {
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.reader-view:hover ~ .stats-container #percentage-counter,
+.reader-view.is-paragraph-view:hover ~ .stats-container #percentage-counter {
+    opacity: 0.8;
+}

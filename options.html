@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Focus Options</title> <!-- Este título se puede dejar en inglés, ya que no es muy visible -->
+    <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+    <div class="options-container">
+        <header>
+            <h1 data-i18n="optionsTitle">Opciones de Reading Focus</h1>
+            <p class="subtitle" data-i18n="optionsSubtitle">Personaliza tu experiencia de lectura.</p>
+        </header>
+        
+        <main>
+            <div class="option-section">
+                <h2 data-i18n="themeTitle">Tema de la Interfaz</h2>
+                <p class="description" data-i18n="themeDescription">Elige el tema visual...</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="theme" value="system"><span data-i18n="themeSystem">Seguir al Sistema</span></label>
+                    <label><input type="radio" name="theme" value="light"><span data-i18n="themeLight">Claro</span></label>
+                    <label><input type="radio" name="theme" value="dark"><span data-i18n="themeDark">Oscuro</span></label>
+                </div>
+            </div>
+            <div class="option-section">
+                <h2 data-i18n="languageTitle">Idioma de la Interfaz</h2>
+                <p class="description" data-i18n="languageDescription">Selecciona el idioma...</p>
+                <select id="language-select">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="option-section">
+                <h2 data-i18n="extractTitle">Comportamiento del Clic en el Ícono</h2>
+                <p class="description" data-i18n="extractDescription">Elige la acción principal...</p>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="extract-article-checkbox">
+                    <label for="extract-article-checkbox" data-i18n="extractLabel">Extraer automáticamente...</label>
+                </div>
+                <p class="description note" data-i18n="extractNote">Si está desmarcado...</p>
+            </div>
+        </main>
+        
+        <footer>
+            <button id="save-button" data-i18n="saveButton">Guardar Cambios</button>
+            <div id="status-message" class="status"></div>
+        </footer>
+    </div>
+    
+    <script type="module" src="js/options-main.js"></script>
+</body>
+</html>

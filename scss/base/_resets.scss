@@ -1,0 +1,21 @@
+// Universal box-sizing and resets
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Base styles for html and body
+html {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
