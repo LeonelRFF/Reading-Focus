@@ -6,14 +6,7 @@
 
 ---
 
-[![Reading Focus Una Extensión para Leer Más Rápido Gratis](https://i9.ytimg.com/vi_webp/-v2R2vdeew8/mqdefault.webp?v=6875d230&sqp=CMCk18MG&rs=AOn4CLAzxT9CPcp5j9lB8omoreiGU69jXw)](https://www.youtube.com/watch?v=-v2R2vdeew8)
-
----
-
-[![MIT License][license-shield]][license-url]
-[![Issues][issues-shield]][issues-url]
-
-</div>
+[![Reading Focus Una Extensión para Leer Más Rápido Gratis](https://img.youtube.com/vi/-v2R2vdeew8/0.jpg)](https://www.youtube.com/watch?v=-v2R2vdeew8)
 
 ---
 
